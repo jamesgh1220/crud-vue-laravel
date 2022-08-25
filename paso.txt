@@ -1,0 +1,16 @@
+en la carpeta donde este el xammp
+    composer create-project laravel/laravel Crud-Vue-Laravel
+Ingresar a la carpeta creada
+    composer require laravel/ui
+    php artisan ui vue
+    npm install
+        Verificar creacion de node_modules y verificar que se creee en resources/js/ la carpeta components
+
+
+Incluir componentes de vue en las vistas de laravel y
+    en views/welcome.blade en el body llamar al app.js
+    y en el body llamar al componente asi 
+        <div id="app">   ////app hace rfcia al elemento #app en app.js
+            <example-component></example-component> ///example-component es el nombre del componente que se le asigno en app.js
+        </div>
+    fijarse en resources/js/ en app.js esta el ejm de como incluirlas
