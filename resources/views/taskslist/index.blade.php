@@ -4,7 +4,7 @@
     <nav class="navbar navbar-dark bg-dark ">
         <ul class="nav">
             <li class="nav-item">
-                <router-link to="/form" class="nav-link text-white">Formulario</router-link>
+                <router-link to="/form" class="nav-link text-white">Create Task</router-link>
             </li>
             <li class="nav-item">
                 <router-link to="/" class="nav-link text-white">Tasks List</router-link>
