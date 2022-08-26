@@ -5371,9 +5371,29 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  mounted: function mounted() {
-    console.log('Component mounted.');
+  data: function data() {
+    return {
+      tasks: []
+    };
+  },
+  created: function created() {
+    var _this = this;
+
+    axios.get('/tasks').then(function (response) {
+      return _this.tasks = response.data;
+    })["catch"](function (error) {
+      return console.log(error);
+    });
   }
 });
 
@@ -28340,15 +28360,56 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c(
+    "div",
+    { staticClass: "container-fluid" },
+    [
+      _c("h1", { staticClass: "text-center" }, [_vm._v("Tasks List")]),
+      _vm._v(" "),
+      _vm._l(_vm.tasks, function (task) {
+        return _c(
+          "div",
+          {
+            key: task.id,
+            staticClass: "d-flex justify-content-evenly align-items-center",
+          },
+          [
+            _c("input", { attrs: { type: "checkbox" } }),
+            _vm._v(" "),
+            _c("p", { staticClass: "mt-2" }, [_vm._v(_vm._s(task.todo))]),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "ml-auto d-flex" },
+              [
+                _c(
+                  "router-link",
+                  { staticClass: "btn btn-primary", attrs: { to: "/" } },
+                  [_vm._v("Editar")]
+                ),
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _vm._m(0, true),
+          ]
+        )
+      }),
+    ],
+    2
+  )
 }
 var staticRenderFns = [
   function () {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container-fluid" }, [
-      _c("h1", { staticClass: "text-center" }, [_vm._v("Tasks List")]),
+    return _c("form", { attrs: { action: "" } }, [
+      _c(
+        "button",
+        { staticClass: "btn btn-danger", attrs: { type: "submit" } },
+        [_vm._v("Eliminar")]
+      ),
     ])
   },
 ]

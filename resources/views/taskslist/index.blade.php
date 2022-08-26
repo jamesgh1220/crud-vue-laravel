@@ -11,7 +11,7 @@
             </li>
         </ul>
     </nav>
-<div class="d-flex justify-content-center flex-column mt-5">
+<div class="d-flex flex-column justify-content-center mt-5">
     <router-view></router-view>
 </div>
 
