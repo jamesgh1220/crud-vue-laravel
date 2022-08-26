@@ -6,6 +6,7 @@ Ingresar a la carpeta creada
     npm install
         Verificar creacion de node_modules y verificar que se creee en resources/js/ la carpeta components
 
+/////para visualizar cambios: en consola npm run dev-php artisan serve iniciado- npm run watch
 
 Incluir componentes de vue en las vistas de laravel y
     en views/welcome.blade en el body llamar al app.js
@@ -14,3 +15,28 @@ Incluir componentes de vue en las vistas de laravel y
             <example-component></example-component> ///example-component es el nombre del componente que se le asigno en app.js
         </div>
     fijarse en resources/js/ en app.js esta el ejm de como incluirlas
+
+Crear carpeta propia en views necessarias
+    en layouts esta la plantilla de inicio
+    en las otras se extiende de ella
+
+Cambiar en routes/web la direccion inicial return view('taskslist.index'); en esa vista esta el principal
+
+importar bootstrap en el app.blade
+
+instalar vue-router npm install vue-router@3
+
+
+((((El app.blade es el ppal que es importado por el index, el index contiene todas las rutas utilizando el router link que deben de ser llamadas igual que se declararon en app.js y tambien utilizar el router view))))
+
+
+
+en el form no olvidar poner el vonsubmitprevent para que no recarge la pagina
+
+crear bd, conectar .env
+crear model y migrate php artisan make:model Task -m
+    configurar migracion y luego php artisan migrate
+Crear controller php artisan make:controller TaskController -r
+    hacer metodos
+
+ir a web.php agregar ruta nueva
