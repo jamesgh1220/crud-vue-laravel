@@ -13,11 +13,13 @@ Vue.use(VueRouter);
 
 import Form from './components/tasks/Form.vue';
 import Tasks from './components/tasks/Lists.vue';
+import Edit from './components/tasks/Edit.vue';
 
 
 const routes = [
         { path: '/form', component: Form },
-        { path: '/', component: Tasks }
+        { path: '/', component: Tasks },
+        { path: '/edit/:id', component: Edit }
     ]
     /**
      * Next, we will create a fresh Vue application instance and attach it to

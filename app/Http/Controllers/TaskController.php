@@ -58,7 +58,8 @@ class TaskController extends Controller
      */
     public function edit($id)
     {
-        //
+        $task = Task::find($id);
+        return response()->json($task);
     }
 
     /**
@@ -70,7 +71,10 @@ class TaskController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $task = Task::find($id);
+        $task->todo = $request['task'];
+        $task->completed = $request['completed'];
+        $task->update();
     }
 
     /**
@@ -81,6 +85,7 @@ class TaskController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $task = Task::find($id);
+        $task->delete();
     }
 }

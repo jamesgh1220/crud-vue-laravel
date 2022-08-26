@@ -42,3 +42,5 @@ Crear controller php artisan make:controller TaskController -r
 ir a web.php agregar ruta nueva
 
 revisar bien en los componentes si es necesario poner methods o no
+
+crear rutas de edit con el id por parametro
